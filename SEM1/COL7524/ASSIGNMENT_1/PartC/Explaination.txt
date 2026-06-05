@@ -1,0 +1,10 @@
+In the Part C topology, AS1 could get to AS3 in two different ways:
+
+ A fast, direct link between AS1 and AS3 (100 Mbps, 1 ms delay).
+
+ An indirect route through AS2 (AS1–AS2–AS3).
+
+ If you don't change anything, ns-3's global routing would choose the direct link between AS1 and AS3.
+ I added a static route on AS1 (R0) to make it work like BGP's Local Preference policy.  This route makes sure that all traffic going to AS3's address (10.0.2.2) goes through the AS1–AS2 link, with AS2's interface (10.0.1.2) as the next hop.
+
+ This makes sure that all traffic going from AS1 to AS3 goes through AS2, even though the direct link between AS1 and AS3 is faster.

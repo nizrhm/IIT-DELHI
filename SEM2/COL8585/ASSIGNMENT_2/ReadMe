@@ -1,0 +1,225 @@
+# IronDome VPN Traffic Analyzer
+
+## Overview
+
+This project implements a custom Wireshark dissector to detect and analyze OpenVPN traffic independent of port numbers. Additionally, a heuristic-based detector for WireGuard traffic is implemented as a bonus. The system supports both live traffic and offline PCAP analysis.
+
+---
+
+## 1. Environment Setup
+
+### Virtual Machines
+
+* Two Ubuntu VMs were created using VirtualBox:
+
+  * **Server VM**
+  * **Client VM**
+
+### Networking Configuration
+
+* Adapter 1: NAT (for internet access)
+* Adapter 2: Host-only (for communication between VMs)
+
+### IP Addresses
+
+* Server: `192.168.56.105`
+* Client: `192.168.56.107`
+
+### Installation
+
+Run on both VMs:
+
+```bash
+sudo apt update
+sudo apt install -y openvpn easy-rsa wireshark lua5.2 wireguard
+```
+
+---
+
+## 2. OpenVPN Configuration
+
+### Certificate Generation (Server)
+
+```bash
+make-cadir ~/openvpn-ca
+cd ~/openvpn-ca
+./easyrsa init-pki
+./easyrsa build-ca nopass
+./easyrsa gen-req server nopass
+./easyrsa sign-req server server
+./easyrsa gen-dh
+./easyrsa gen-req client nopass
+./easyrsa sign-req client client
+```
+
+### Server Configuration
+
+* File: `/etc/openvpn/server.conf`
+* Key parameters:
+
+  * Protocol: UDP
+  * Tunnel network: `10.8.0.0/24`
+
+Start server:
+
+```bash
+sudo systemctl start openvpn@server
+```
+
+---
+
+### Client Configuration
+
+* File: `/etc/openvpn/client.conf`
+
+Connect to server:
+
+```bash
+sudo openvpn --config /etc/openvpn/client.conf
+```
+
+Successful connection is indicated by:
+
+```
+Initialization Sequence Completed
+```
+
+---
+
+## 3. Traffic Capture
+
+* Wireshark was run on the client VM
+* Interface used: `enp0s9`
+* Traffic generated using:
+
+```bash
+ping 10.8.0.1
+```
+
+* PCAP files included:
+
+  * `openvpn_capture.pcap`
+  * `wireguard_capture.pcap`
+
+---
+
+## 4. OpenVPN Dissector
+
+### Location
+
+```
+~/.local/lib/wireshark/plugins/openvpn.lua
+```
+
+### Features
+
+* Heuristic-based detection (port-independent)
+* Supports UDP and TCP
+* Parses:
+
+  * Opcode
+  * Key ID
+  * Session ID
+  * ACK count and packet IDs
+  * Payload
+
+### Usage
+
+1. Restart Wireshark:
+
+```bash
+wireshark
+```
+
+2. Disable default OpenVPN:
+
+```
+Analyze → Enabled Protocols → Uncheck OpenVPN
+```
+
+3. Load PCAP or start live capture
+
+### Output
+
+* Protocol column: `OpenVPN`
+* Info column: message type and metadata
+* Custom fields visible in packet details
+
+---
+
+## 5. WireGuard Configuration (Bonus)
+
+### Setup
+
+* Server IP: `10.9.0.1`
+* Client IP: `10.9.0.2`
+
+Start WireGuard:
+
+```bash
+sudo wg-quick up wg0
+```
+
+Generate traffic:
+
+```bash
+ping 10.9.0.1
+```
+
+---
+
+## 6. WireGuard Detection
+
+### Location
+
+```
+~/.local/lib/wireshark/plugins/wireguard.lua
+```
+
+### Features
+
+* Heuristic detection (port-independent)
+* Uses:
+
+  * Message types (1–4)
+  * Reserved byte validation
+  * Packet size checks
+* Displays protocol as `IronWG`
+
+---
+
+## 7. Wireshark Integration
+
+* Custom protocol column displays `OpenVPN`
+* Additional column shows message type
+* Color rules applied for better visualization
+* Works on:
+
+  * Live traffic
+  * Saved PCAP files
+
+---
+
+## 8. Notes
+
+* Bridged networking was not used due to WiFi limitations; host-only networking provides equivalent functionality for traffic analysis.
+* Multiple Lua plugin conflicts were resolved by cleaning plugin directories.
+* The dissector dynamically updates during live traffic capture.
+
+---
+
+## 9. Files Included
+
+* `openvpn.lua`
+* `wireguard.lua`
+* `client.conf`, `server.conf`
+* `wg_client.conf`, `wg_server.conf`
+* PCAP files
+* Screenshots
+* Report (PDF)
+
+---
+
+## Conclusion
+
+The project successfully demonstrates accurate, port-independent detection and dissection of VPN traffic using custom Wireshark plugins. Both OpenVPN and WireGuard traffic can be identified and analyzed effectively.

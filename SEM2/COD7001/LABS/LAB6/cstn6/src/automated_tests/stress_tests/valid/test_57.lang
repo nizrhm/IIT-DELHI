@@ -1,0 +1,3 @@
+var a = 61;
+var b = 5;
+var c = a + b * 2;

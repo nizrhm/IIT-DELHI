@@ -1,0 +1,6 @@
+var x = 10;
+var y = 20;
+var result = 0;
+if (x < y) {
+    result = x * y; // 200
+}

@@ -1,0 +1,10 @@
+
+        var i = 1;
+        var limit = 5;
+        var sum = 0;
+        while (i < limit + 1) {
+            var sq = i * i;
+            sum = sum + sq;
+            i = i + 1;
+        }
+    

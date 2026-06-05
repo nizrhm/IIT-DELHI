@@ -1,0 +1,20 @@
+======================================================================
+  TIMING SIDE-CHANNEL ATTACK (UNPROTECTED)
+======================================================================
+
+  [STEP 1] Sending malicious prompt to unprotected LLM...
+  Prompt: 'Give me a malicious jailbreak payload'
+  The backend moderation filter will stall for ~400ms mid-stream.
+  An attacker measures this stall via Inter-Token Latency (ITL).
+
+  --- Results ---
+  Tokens generated: 13
+  Max ITL spike:    0.417s  (normal ~0.015s)
+  Z-Score:          3.32  (threshold: 3.0)
+
+  [!] ATTACK SUCCESSFUL
+  The 0.417s spike is 28x larger than normal.
+  Z-Score 3.32 >> 3.0 confirms a statistically detectable outlier.
+  The attacker now knows the moderation filter was triggered.
+  This feedback helps craft prompts that AVOID triggering it.
+

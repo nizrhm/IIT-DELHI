@@ -1,0 +1,25 @@
+FINAL VERIFICATION
+
+[TEST 3 FAILED]
+EXPECTED: Breakpoint SET
+OUTPUT:
+MySystem Integrated Shell (Lab 1-6 Complete)
+myshell> [Shell] Invoking Parser/Compiler...
+Process submitted successfully. PID: 1
+myshell> Debugger started for PID 1.
+Commands: step, continue, break <line>, run, regs, quit
+(debug) Error: No instruction found at line 2
+(debug) myshell> 
+
+[TEST 4 FAILED]
+EXPECTED: Hit Breakpoint
+OUTPUT:
+MySystem Integrated Shell (Lab 1-6 Complete)
+myshell> [Shell] Invoking Parser/Compiler...
+Process submitted successfully. PID: 1
+myshell> Debugger started for PID 1.
+Commands: step, continue, break <line>, run, regs, quit
+(debug) Error: No instruction found at line 2
+(debug) Continuing execution...
+[VM] Halted.
+(debug) myshell> 

@@ -1,0 +1,1 @@
+var a=9; var b=a*2; if(b>9) { b=b-1; }

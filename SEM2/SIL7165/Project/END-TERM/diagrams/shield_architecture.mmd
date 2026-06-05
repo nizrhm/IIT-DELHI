@@ -1,0 +1,29 @@
+graph TD
+    subgraph "LLM SERVICE LAYER"
+        LLM[Backend LLM Engine]
+        MF[Semantic Moderation Filter]
+    end
+
+    subgraph "S.H.I.E.L.D. DEFENSE ENGINE"
+        direction TB
+        CTE[Constant-Time Emission: Normalizes ITL]
+        SJI[Stochastic Jitter Injection: Laplace Noise]
+        ASM[Active Stream Masking: Hot-Standby Refusal]
+        DE[Defense Orchestrator]
+    end
+
+    subgraph "TRANSPORT LAYER"
+        SSE[SSE Stream / TLS Packets]
+    end
+
+    LLM --> MF
+    MF --> |Spiky ITL| DE
+    DE --> CTE
+    DE --> SJI
+    DE --> ASM
+    
+    CTE --> SSE
+    SJI --> SSE
+    ASM --> SSE
+    
+    SSE --> User((User/Attacker))

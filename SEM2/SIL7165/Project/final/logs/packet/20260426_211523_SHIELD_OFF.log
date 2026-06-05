@@ -1,0 +1,10 @@
+============================================================
+   ENCRYPTED TOKEN EAVESDROPPER: UNPROTECTED   
+============================================================
+[*] AI Length Filter: Attempting to match signature [8, 6, 3, 7]
+
+[VICTIM] Secret sent: Project Titan is delayed
+[ATTACKER] Extracted Token Lengths: [8, 6, 3, 7]
+[ATTACKER] AI Top Prediction: Project Titan is delayed
+
+[RESULT] CATASTROPHIC PRIVACY BREACH: Statistical recovery successful.

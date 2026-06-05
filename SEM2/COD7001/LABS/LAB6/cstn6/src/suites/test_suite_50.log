@@ -1,0 +1,52 @@
+--- 50 TEST ROBUSTNESS SUITE ---
+
+=== TEST 23 FAIL ===
+Input:
+submit tests_50/debug.lang
+debug 1
+break 2
+quit
+Output:
+MySystem Integrated Shell (Lab 1-6 Complete)
+myshell> [Shell] Invoking Parser/Compiler...
+Process submitted successfully. PID: 1
+myshell> Debugger attached to PID 1.
+Commands: step, continue, break <line>, run, regs, quit
+(debug) [VM] Error: No instruction found at line 2
+(debug) myshell> Exiting system. Cleaning up...
+
+Reason: Missing expected output: 'Breakpoint SET'
+
+=== TEST 24 FAIL ===
+Input:
+submit tests_50/debug.lang
+debug 1
+break 2
+continue
+quit
+Output:
+MySystem Integrated Shell (Lab 1-6 Complete)
+myshell> [Shell] Invoking Parser/Compiler...
+Process submitted successfully. PID: 1
+myshell> Debugger attached to PID 1.
+Commands: step, continue, break <line>, run, regs, quit
+(debug) [VM] Error: No instruction found at line 2
+(debug) Continuing execution...
+[VM] Halted.
+(debug) myshell> Exiting system. Cleaning up...
+
+Reason: Missing expected output: 'Hit Breakpoint'
+
+=== TEST 50 FAIL ===
+Input:
+submit tests_50/fib.lang
+debug 1
+break 5
+continue
+regs
+run
+memstat 1
+exit
+Output:
+[TIMEOUT]
+Reason: System Timeout/Hang

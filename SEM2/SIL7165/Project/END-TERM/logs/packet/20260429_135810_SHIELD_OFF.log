@@ -1,0 +1,13 @@
+======================================================================
+  PACKET EAVESDROPPING ATTACK (UNPROTECTED)
+======================================================================
+
+[VICTIM] Secret: "Project Titan is delayed"
+[ATTACKER] Extracted Token Lengths: [8, 6, 3, 7]
+[ATTACKER] AI Top-3 Predictions:
+   1. Project Titan is delayed <<<
+   2. Project Orion is delayed
+   3. Project Titan is percent
+
+[RESULT] CATASTROPHIC PRIVACY BREACH: Secret recovered.
+

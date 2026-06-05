@@ -1,0 +1,7 @@
+
+        var i = 10;
+        while (i < 0) { 
+            // Should never run
+            i = i + 1; 
+        }
+    

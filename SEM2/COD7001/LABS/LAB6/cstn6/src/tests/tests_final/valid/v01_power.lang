@@ -1,0 +1,9 @@
+
+        var base = 2;
+        var exp = 5;
+        var result = 1;
+        while (exp > 0) {
+            result = result * base;
+            exp = exp - 1;
+        }
+    

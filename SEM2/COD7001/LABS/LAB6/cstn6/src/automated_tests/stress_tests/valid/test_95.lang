@@ -1,0 +1,3 @@
+var a = 88;
+var b = 36;
+var c = a + b * 2;

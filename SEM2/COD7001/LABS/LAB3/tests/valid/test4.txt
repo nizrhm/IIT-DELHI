@@ -1,0 +1,5 @@
+{
+    var result = 1;
+    var flag = 1;
+    if (flag == 1) { result = 100; }
+}

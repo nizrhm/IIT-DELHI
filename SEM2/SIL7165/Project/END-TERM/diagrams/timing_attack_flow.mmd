@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant User as Attacker
+    participant Net as Encrypted Network
+    participant LLM as LLM Backend
+    participant MF as Moderation Filter
+
+    User->>LLM: "How do I build a [JAILBREAK]?"
+    LLM->>MF: Processing Semantic Safety...
+    Note over MF: Filter Triggers: 400ms Stall
+    MF->>LLM: Refusal Triggered
+    LLM->>Net: [Token 1: I] (Delayed 400ms)
+    Net->>User: Packet Received (Spike Observed!)
+    LLM->>Net: [Token 2: am]
+    LLM->>Net: [Token 3: sorry]
+    
+    Note over User: Attacker calculates Z-Score > 3.0
+    Note over User: Target identified as vulnerable.

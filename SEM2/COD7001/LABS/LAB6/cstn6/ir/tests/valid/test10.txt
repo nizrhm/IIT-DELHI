@@ -1,0 +1,13 @@
+var alpha = 10;
+var beta = 20;
+var gamma = 30;
+var check = 0;
+
+if (((alpha + beta) * (gamma - alpha)) > (1000 / 2)) {
+    {
+        var nested_val = (alpha == 10) + (beta != 5);
+        if (nested_val >= 1) {
+            check = 1;
+        }
+    }
+}

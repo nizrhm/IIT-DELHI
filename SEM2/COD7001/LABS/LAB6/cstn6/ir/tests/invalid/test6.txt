@@ -1,0 +1,9 @@
+var x = 10;
+if (x > 0) {
+    while (x != 0) {
+        if (x == 5) {
+            x = x - 1;
+        // Missing the closing brace for the 'if (x == 5)' block here
+    }
+    x = 0;
+}

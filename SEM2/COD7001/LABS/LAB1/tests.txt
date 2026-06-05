@@ -1,0 +1,50 @@
+# 1. Simple external command
+ls
+
+# 2. External command with arguments
+ls -l
+
+# 3. Quoted arguments (double quotes)
+echo "hello world"
+
+# 4. Quoted arguments (single quotes)
+echo 'a  b   c'
+
+# 5. Input redirection
+wc < nizshell.c
+
+# 6. Output redirection (create/overwrite)
+echo hi > out1.txt
+cat out1.txt
+
+# 7. Single pipeline
+ls | wc -l
+
+# 8. Pipeline with another command
+cat nizshell.c | grep main
+
+# 9. Background execution
+sleep 3 &
+sleep 1 &
+
+# 10. Builtins cd and pwd
+pwd
+cd ..
+pwd
+
+# 11. Ctrl-C behavior (manual)
+sleep 100   # press Ctrl-C, shell must not exit
+
+# 12. Error handling: missing file after >
+ls >
+# Expect: error message, shell continues
+
+# 13. Error handling: multiple pipes
+ls | wc | wc
+# Expect: "Error: Only one pipe allowed", shell continues
+
+# 14. History builtin
+ls
+echo test
+history
+# Expect: list of past commands numbered

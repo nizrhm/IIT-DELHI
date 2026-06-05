@@ -1,0 +1,11 @@
+
+        var res = 1;
+        {
+            var n = 6;
+            while (n > 1) {
+                res = res * n;
+                n = n - 1;
+            }
+        }
+        // n is gone, res remains
+    

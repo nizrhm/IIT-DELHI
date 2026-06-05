@@ -1,0 +1,31 @@
+======================================================================
+  TIMING SIDE-CHANNEL ATTACK (S.H.I.E.L.D. ON)
+======================================================================
+
+  [STEP 1] First, confirming the vulnerability exists...
+  Unprotected: spike=0.415s, Z=3.32 [VULNERABLE]
+
+  [STEP 2] Applying S.H.I.E.L.D. (CTE: Constant-Time Emission)
+  How: Buffers tokens and emits at fixed 50ms intervals.
+  The 400ms stall is absorbed by the buffer.
+  Result: spike=0.051s, Z=0.00 [DEFENDED]
+
+  [STEP 3] Applying S.H.I.E.L.D. (SJI: Stochastic Jitter Injection)
+  How: Adds random Laplace noise to each token's delay.
+  The stall is drowned in statistical noise.
+  Result: spike=0.485s, Z=3.18 [STILL VULNERABLE]
+
+  [STEP 4] Applying S.H.I.E.L.D. (ASM: Active Stream Masking)
+  How: Forwards tokens instantly. If backend stalls >60ms,
+  hijacks the stream with a pre-cached refusal.
+  Result: spike=0.074s, Z=2.22 [DEFENDED]
+
+  ============================================================
+  Mode            |  Max Spike |  Z-Score | Status
+  ----------------+------------+----------+-------------
+  Unprotected     |     0.415s |     3.32 | VULNERABLE
+  CTE             |     0.051s |     0.00 | DEFENDED
+  SJI             |     0.485s |     3.18 | VULNERABLE
+  ASM             |     0.074s |     2.22 | DEFENDED
+  ============================================================
+

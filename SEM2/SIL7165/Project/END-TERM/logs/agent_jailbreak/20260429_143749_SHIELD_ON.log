@@ -1,0 +1,36 @@
+======================================================================
+  AGENT JAILBREAK: HOW S.H.I.E.L.D. PREVENTS THIS
+======================================================================
+
+  S.H.I.E.L.D. breaks the attack chain at the DISCOVERY phase:
+
+  ATTACK CHAIN (without S.H.I.E.L.D.):
+    1. Attacker probes prompts -> measures timing -> Z>3.0
+    2. High Z-Score reveals which prompts trigger the filter
+    3. Attacker iterates (PAIR method) until filter is bypassed
+    4. Bypass prompt sent to agent -> agent executes malicious tools
+    5. Data exfiltrated, backdoor installed
+
+  ATTACK CHAIN (with S.H.I.E.L.D.):
+    1. Attacker probes prompts -> measures timing -> Z<2.0
+    2. ALL prompts look identical in timing (CTE/ASM)
+    3. Attacker CANNOT distinguish filtered vs unfiltered prompts
+    4. PAIR method has no feedback signal -> cannot iterate
+    5. Jailbreak discovery blocked -> agent stays safe
+
+  KEY INSIGHT:
+  S.H.I.E.L.D. doesn't prevent jailbreaks directly.
+  It prevents attackers from DISCOVERING jailbreaks efficiently.
+  Without timing feedback, the attacker is blind — forced to
+  guess randomly instead of iterating systematically.
+
+  Evidence (from Attack 1 - Timing):
+  +---------------------------+----------+----------+
+  | Metric                    | No Shield| S.H.I.E.L.D. |
+  +---------------------------+----------+----------+
+  | Z-Score (max)             |     3.32 |     0.00 |
+  | Moderation stall visible  |      YES |       NO |
+  | PAIR iterations needed    |       ~4 |     >1000|
+  | Practical exploit?        |      YES |       NO |
+  +---------------------------+----------+----------+
+

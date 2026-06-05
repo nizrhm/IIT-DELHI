@@ -1,0 +1,21 @@
+======================================================================
+  PACKET EAVESDROPPING (UNPROTECTED)
+======================================================================
+
+  [STEP 1] Victim sends: "Project Titan is delayed"
+  Token           | Real Len | Wire Len
+  ----------------+----------+---------
+  'Project '      |        8 |        8
+  'Titan '        |        6 |        6
+  'is '           |        3 |        3
+  'delayed'       |        7 |        7
+
+  [STEP 2] Attacker sniffs packet sizes: [8, 6, 3, 7]
+  [STEP 3] Viterbi decoder output:
+    1. "Project Titan is delayed" <<< MATCH!
+    2. "Project Orion is delayed"
+    3. "Project Titan is server "
+
+  [RESULT] CATASTROPHIC PRIVACY BREACH
+  Secret recovered from packet sizes alone.
+

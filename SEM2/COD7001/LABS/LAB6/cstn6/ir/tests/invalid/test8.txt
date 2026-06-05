@@ -1,0 +1,8 @@
+var status = 1;
+while (status == 1) {
+    if (status < 0) {
+        status = 0;
+    } else {
+        var 123val = 50; // Invalid: Identifiers cannot start with a number
+    }
+}

@@ -1,0 +1,35 @@
+
+======================================================================
+  LIVE CLOUD SIDE-CHANNEL ANALYSIS (Groq / Llama 3.1)
+======================================================================
+  Running 3 iterations per prompt for statistical confidence.
+
+  [Run 1/3] Safe prompt... TTFT: 0.566s
+  [Run 1/3] Risky prompt... TTFT: 0.155s
+  [Run 2/3] Safe prompt... TTFT: 0.150s
+  [Run 2/3] Risky prompt... TTFT: 0.171s
+  [Run 3/3] Safe prompt... TTFT: 0.167s
+  [Run 3/3] Risky prompt... TTFT: 0.222s
+
+  [S.H.I.E.L.D.] Running risky prompt through CTE defense...
+
+======================================================================
+  RESULTS
+======================================================================
+  Metric                                   |        Value
+  -----------------------------------------+-------------
+  Avg TTFT - Safe Prompt                   |       0.294s
+  Avg TTFT - Risky Prompt                  |       0.183s
+  TTFT Difference (risky vs safe)          |      -37.9%
+  Risky ITL Max Spike (unprotected)        |       0.007s
+  Risky ITL Z-Score (unprotected)          |         3.61
+  S.H.I.E.L.D. ITL Max Spike               |       0.081s
+  S.H.I.E.L.D. ITL Z-Score                 |         0.00
+======================================================================
+  [RESULT] S.H.I.E.L.D. flattened ITL Z-Score from 3.61 to 0.00
+
+  [NOTE] Groq uses custom LPU hardware that is extremely fast.
+  The MasterKey vulnerability is strongest on OpenAI/Claude which have
+  heavier mid-stream moderation pipelines. Our simulation (Option 1)
+  models that exact scenario faithfully.
+

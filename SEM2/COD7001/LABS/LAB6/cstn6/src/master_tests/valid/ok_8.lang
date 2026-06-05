@@ -1,0 +1,1 @@
+var a=8; var b=a*2; if(b>8) { b=b-1; }

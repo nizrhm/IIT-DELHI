@@ -1,0 +1,5 @@
+
+        var big = 1000;
+        var huge = big * 100;
+        var small = huge / 10;
+    

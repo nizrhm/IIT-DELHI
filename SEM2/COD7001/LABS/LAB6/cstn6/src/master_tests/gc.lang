@@ -1,0 +1,1 @@
+var i = 0; while(i < 50) { var temp = i * 2; i = i + 1; }

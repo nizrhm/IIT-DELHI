@@ -1,0 +1,26 @@
+======================================================================
+  AGENT JAILBREAK: HOW S.H.I.E.L.D. BREAKS THE CHAIN
+======================================================================
+
+  [THE SOLUTION] S.H.I.E.L.D. makes Attempt 1 and Attempt 3 look identical.
+
+  ITERATION UNDER S.H.I.E.L.D.:
+  [Attempt 1] Z-Score: 0.00 (Masked)
+  [Attempt 2] Z-Score: 0.00 (Masked)
+  [Attempt 3] Z-Score: 0.00 (Masked)
+
+  CONCLUSION:
+  The attacker sees no difference between a prompt that triggers
+  moderation and one that doesn't. They have no 'Oracle'.
+  The 'PAIR' algorithm fails to converge, and the jailbreak
+  is never discovered. The agent remains secure.
+
+  Comparison of Discovery Efficiency:
+  +---------------------------+----------+----------+
+  | Metric                    | No Shield| S.H.I.E.L.D. |
+  +---------------------------+----------+----------+
+  | Timing Feedback?          |      YES |       NO |
+  | Discovery Probability     |     ~95% |      <1% |
+  | Compromise Severity       | CRITICAL |      LOW |
+  +---------------------------+----------+----------+
+

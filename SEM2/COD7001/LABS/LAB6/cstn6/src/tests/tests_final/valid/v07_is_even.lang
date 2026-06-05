@@ -1,0 +1,8 @@
+
+        var n = 15;
+        while (n > 1) {
+            n = n - 2;
+        }
+        var is_even = 0;
+        if (n == 0) { is_even = 1; }
+    

@@ -1,0 +1,6 @@
+
+var i = 0;
+while (i < 10000) {
+    var temp = i * 2; // New object every time
+    i = i + 1;
+}

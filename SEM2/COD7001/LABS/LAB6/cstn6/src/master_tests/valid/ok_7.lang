@@ -1,0 +1,1 @@
+var a=7; var b=a*2; if(b>7) { b=b-1; }

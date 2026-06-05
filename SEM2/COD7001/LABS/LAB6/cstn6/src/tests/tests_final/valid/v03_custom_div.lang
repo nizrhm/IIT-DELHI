@@ -1,0 +1,10 @@
+
+        var num = 100;
+        var den = 7;
+        var count = 0;
+        while (num > den) {
+            num = num - den;
+            count = count + 1;
+        }
+        // count is the quotient, num is the remainder
+    

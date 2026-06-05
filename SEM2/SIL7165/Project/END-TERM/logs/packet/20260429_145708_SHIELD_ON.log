@@ -1,0 +1,19 @@
+======================================================================
+  PACKET EAVESDROPPING (S.H.I.E.L.D. ON)
+======================================================================
+
+  [STEP 1] Victim sends: "Project Titan is delayed"
+  Token           | Real Len | Wire Len
+  ----------------+----------+---------
+  'Project '      |        8 |       14 (PADDED)
+  'Titan '        |        6 |       16 (PADDED)
+  'is '           |        3 |       14 (PADDED)
+  'delayed'       |        7 |       15 (PADDED)
+
+  [STEP 2] Attacker sniffs packet sizes: [14, 16, 14, 15]
+  [STEP 3] Viterbi decoder output:
+    1. "<NO MATCH: uniform padding destroyed signal>"
+
+  [RESULT] ATTACK DEFEATED
+  Constant-Size Padding destroyed the signal.
+

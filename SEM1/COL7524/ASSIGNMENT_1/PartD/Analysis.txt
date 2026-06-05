@@ -1,0 +1,25 @@
+Timeline: Initially, traffic used the fast, primary path (Flow 1). At t=5s, the link failed, and traffic was automatically rerouted to the slower, backup path (Flow 2). At t=7s, the primary link recovered, and traffic switched back to the fast path (Flow 1).
+Total Packet Loss: You can calculate the total loss from all flows.
+Total Sent: 366 (Flow 1) + 854 (Flow 2) = 1220 packets
+Total Received: 365 (Flow 1) + 851 (Flow 2) = 1216 packets
+Actual Packets Lost = 4. These were all dropped at the moment of failure (t=5s) as the network rerouted.
+
+Time (s)
+Event
+0–2
+Setup, applications initialized
+2–5
+Traffic flows via AS1–AS3 (direct fast link)
+5.0
+Link AS1–AS3 fails
+5.1
+Static route updated to go via AS2
+5–7
+Traffic flows via AS1–AS2–AS3 (slow path), heavy loss
+7.0
+Link AS1–AS3 restored
+7.1
+Route switched back to direct AS1–AS3
+7–12
+Traffic resumes over fast direct link, stable performance
+

@@ -1,0 +1,25 @@
+graph LR
+    subgraph "OBSERVATION"
+        P1[Packet 37b] --> L1[Length: 8]
+        P2[Packet 35b] --> L2[Length: 6]
+        P3[Packet 32b] --> L3[Length: 3]
+        P4[Packet 36b] --> L4[Length: 7]
+    end
+
+    subgraph "AI RECONSTRUCTION"
+        V1[Viterbi State 1] --> V2[Viterbi State 2]
+        V2 --> V3[Viterbi State 3]
+        V3 --> V4[Viterbi State 4]
+    end
+
+    L1 --> V1
+    L2 --> V2
+    L3 --> V3
+    L4 --> V4
+
+    SLM[(Statistical Language Model)] --> V1
+    SLM --> V2
+    SLM --> V3
+    SLM --> V4
+
+    V4 --> Result[Prediction: 'Project Titan is delayed']

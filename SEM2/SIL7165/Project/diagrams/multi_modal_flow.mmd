@@ -1,0 +1,20 @@
+graph TD
+    subgraph "ATTACKER"
+        IMG[Benign-Looking Image]
+        ADV[Adversarial Noise]
+        Payload((Malicious Text))
+    end
+
+    subgraph "VLM BACKEND"
+        TF[Text Filter]
+        VE[Visual Encoder]
+        LLM[LLM Core]
+    end
+
+    Payload --X TF
+    IMG + ADV --> VE
+    VE --> |Embedding: Malicious| LLM
+    LLM --> |Jailbroken Response| User
+    
+    Note over VE: Latency Spike Created (1.2s)
+    Note over TF: Text filter bypassed (Instruction is in Pixels)

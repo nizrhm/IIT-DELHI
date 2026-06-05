@@ -1,0 +1,23 @@
+======================================================================
+  PACKET EAVESDROPPING (UNPROTECTED)
+======================================================================
+
+  [STEP 1] Victim sends secret message over encrypted HTTPS
+  Secret: "Project Titan is delayed"
+  The message is encrypted — attacker cannot read the content.
+
+  [STEP 2] Attacker intercepts encrypted packets (like Wireshark)
+  Cannot decrypt content, but CAN see packet sizes.
+  Extracted token lengths: [8, 6, 3, 7]
+  (Each length matches the word: 8 6 3 7)
+
+  [STEP 3] Attacker runs Viterbi decoder (bigram language model)
+  Top-3 predictions:
+    1. "Project Titan is delayed" <<< MATCH!
+    2. "Project Orion is delayed"
+    3. "Project Titan is launch "
+
+  [RESULT] CATASTROPHIC PRIVACY BREACH
+  The attacker recovered the exact secret from packet sizes alone.
+  Encryption provided ZERO protection against this side-channel.
+

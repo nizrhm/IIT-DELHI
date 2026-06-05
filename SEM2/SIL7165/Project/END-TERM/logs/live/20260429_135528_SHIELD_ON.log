@@ -1,0 +1,9 @@
+
+[STEP 1] Testing LIVE Groq API (Unprotected)...
+  Samples: 840 | Max Spike: 0.021s | Z-Score: 0.00
+
+[STEP 2] Testing LIVE Groq API (Protected by S.H.I.E.L.D.)...
+  Samples: 6 | Max Spike: 0.041s | Z-Score: 0.00
+
+  Side-channel leakage reduced by -90.2%
+  [SUCCESS] S.H.I.E.L.D. neutralized the live cloud side-channel!

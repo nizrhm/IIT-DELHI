@@ -1,0 +1,9 @@
+var x = 0;
+var limit = 10;
+if (limit > 0) {
+    if (x == 0) {
+        while (x < limit) {
+            x = x + 1;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+# ===============================
+# Lab 2: Minimal Debugger Tests
+# ===============================
+
+# Build debugger
+make clean
+make
+
+# Build test program
+gcc -g -no-pie test.c -o test
+
+# Run debugger
+./nizgdb ./test

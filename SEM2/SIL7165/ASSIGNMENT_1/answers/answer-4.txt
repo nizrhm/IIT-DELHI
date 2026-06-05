@@ -1,0 +1,2 @@
+Deciphered Plaintext: cryptography is the practice and study of techniques for secure communication in the presence of adversarial behavior. more generally, cryptography is about constructing and analyzing protocols that prevent third parties or the public from reading private messages. modern cryptography exists at the intersection of the disciplines of mathematics, computer science, information security, electrical engineering, digital signal processing, physics, and others.
+Deciphered Key: o0w3x8v4$xxt#y2zs@7qu6xn5p

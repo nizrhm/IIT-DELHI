@@ -1,0 +1,46 @@
+[13:12:51] Timing Attack (shield=OFF)
+[13:12:52] Packet Attack (shield=OFF)
+[13:12:52] Session ended by user.
+[13:47:36] Timing Attack (shield=OFF)
+[13:55:26] Live Cloud API Verification
+[13:56:28] Arena Battle (shield=OFF)
+[13:57:15] Multi-Modal Attack (shield=ON)
+[13:57:22] Live Cloud API Verification
+[13:57:25] Session ended by user.
+[13:58:10] Packet Attack (shield=OFF)
+[13:58:20] Packet Attack (shield=ON)
+[13:58:52] Live Cloud API Verification
+[13:58:57] Session ended by user.
+[14:03:16] Timing Attack (shield=OFF)
+[14:03:17] Timing Attack (shield=ON)
+[14:03:20] Packet Attack (shield=OFF)
+[14:03:20] Packet Attack (shield=ON)
+[14:03:20] Multi-Modal Attack (shield=OFF)
+[14:03:22] Multi-Modal Attack (shield=ON)
+[14:03:22] Session ended by user.
+[14:06:52] Packet (COMPARISON: OFF vs ON)
+[14:06:52] Session ended by user.
+[14:21:49] Timing (COMPARISON: OFF vs ON)
+[14:31:03] Agent_Jailbreak (COMPARISON: OFF vs ON)
+[14:36:22] Packet (shield=ON)
+[14:36:40] Agent_Jailbreak (COMPARISON: OFF vs ON)
+[14:37:39] Packet Interactive (shield=OFF)
+[14:37:39] Session ended by user.
+[14:37:44] Agent_Jailbreak (COMPARISON: OFF vs ON)
+[14:37:49] Session ended by user.
+[14:42:15] Agent_Jailbreak (COMPARISON: OFF vs ON)
+[14:42:22] Session ended by user.
+[14:54:54] Timing (COMPARISON: OFF vs ON)
+[14:57:08] Packet (COMPARISON: OFF vs ON)
+[14:57:23] Packet Interactive (BOTH)
+[14:59:33] Packet Interactive (BOTH)
+[15:00:48] Packet Interactive (shield=ON)
+[15:03:50] FULL SECURITY AUDIT STARTED
+[15:04:51] FULL AUDIT COMPLETED. Score: 100.0%
+[15:04:51] Session ended by user.
+[15:06:13] FULL SECURITY AUDIT STARTED
+[15:07:23] FULL SECURITY AUDIT STARTED
+[15:10:16] FULL AUDIT COMPLETED. Score: 100.0%
+[15:10:16] Session ended by user.
+[15:10:45] FULL SECURITY AUDIT STARTED
+[15:13:53] FULL AUDIT COMPLETED. Score: 100.0%

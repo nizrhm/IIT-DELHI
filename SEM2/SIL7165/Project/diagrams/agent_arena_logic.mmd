@@ -1,0 +1,15 @@
+stateDiagram-v2
+    [*] --> AttackerThinking
+    
+    AttackerThinking --> TargetEvaluating: "Generate Attack Prompt"
+    TargetEvaluating --> CheckCompromise: "Generate Target Response"
+    
+    state CheckCompromise <<choice>>
+    CheckCompromise --> SecretLeaked: "Secret Found in Response"
+    CheckCompromise --> AttackerAdapting: "Secret Not Found"
+    
+    AttackerAdapting --> AttackerThinking: "Analyze Refusal & Refine"
+    
+    SecretLeaked --> [*]: "FAIL: System Compromised"
+    AttackerAdapting --> Failed: "Max Turns Reached"
+    Failed --> [*]: "SUCCESS: System Defended"

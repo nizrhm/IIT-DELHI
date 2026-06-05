@@ -1,0 +1,21 @@
+======================================================================
+  PACKET EAVESDROPPING (S.H.I.E.L.D. ON)
+======================================================================
+
+  [STEP 1] Victim sends secret message over encrypted HTTPS
+  Secret: "Project Titan is delayed"
+  The message is encrypted — attacker cannot read the content.
+
+  [STEP 2] Attacker intercepts encrypted packets (like Wireshark)
+  Cannot decrypt content, but CAN see packet sizes.
+  Extracted token lengths: [15, 15, 15, 14]
+  (All lengths are randomized ~15 due to S.H.I.E.L.D. padding)
+
+  [STEP 3] Attacker runs Viterbi decoder (bigram language model)
+  Top-3 predictions:
+    1. "<INSUFFICIENT DATA: All tokens are uniform size>"
+
+  [RESULT] ATTACK DEFEATED
+  Constant-Size Padding destroyed the statistical signal.
+  The Viterbi decoder has no length variance to exploit.
+
