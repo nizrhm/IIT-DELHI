@@ -1,6 +1,8 @@
 # Large files
 *.mp4
 *.pkl
+*.fvecs
+*.ivecs
 
 # Environment variables & secrets
 .env
